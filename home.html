@@ -698,27 +698,7 @@
 </div>
 <script>
 	
-	var script = document.createElement("SCRIPT");
-script.src = 'https://s3.eu-central-1.amazonaws.com/timeme/timeme.min.js';
-script.type = 'text/javascript';
-script.onload = function() {
-
-  TimeMe.initialize({
-	currentPageName: window.location.path,
-	idleTimeoutInSeconds: 5
-});
-
-TimeMe.callWhenUserLeaves(function(){
-	var timeInSeconds = TimeMe.getTimeOnCurrentPageInSeconds(TimeMe.currentPageName);
-	var expectedTime = undefined;
-	if(timeInSeconds != expectedTime && timeInSeconds > 3) {	
-		navigator.sendBeacon('https://un71llwwjg.execute-api.eu-central-1.amazonaws.com/dev/', JSON.stringify({cid:'223026', visitor_spend_time:timeInSeconds, current_page_name:window.location.href, referer:document.referrer, key:'spend'}));
-		TimeMe.resetRecordedPageTime(TimeMe.currentPageName);		
-	}
-});
-navigator.sendBeacon("https://un71llwwjg.execute-api.eu-central-1.amazonaws.com/dev/", JSON.stringify({cid:'223026', current_page_name:window.location.href, referer:document.referrer, key:'visit'})) ; 
-
-};
+var script = document.createElement("SCRIPT");
 document.getElementsByTagName("head")[0].appendChild(script);
 	</script>
     <script>
