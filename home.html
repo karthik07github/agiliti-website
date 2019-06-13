@@ -168,9 +168,11 @@
             margin-bottom: 1em;
         }
     }
-    .zoom:hover {
-        transform: scale(1.15); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-    }
+     @media (min-width: 993px) {
+         .zoom:hover {
+             transform: scale(1.15); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+         }
+     }
 
     .input_box{
             width: 90%;
@@ -591,9 +593,9 @@
                     </div>
                       <div class="col-md-6 col-sm-12">
                         <div class="skill_div">
-                           <p><strong>Aws</strong></p>
+                           <p><strong>Amazon Web Services (AWS)</strong></p>
                             <div class="inside_skill">
-                                <div class="inside_perc_skill datatable_color clean_desc_color">60%</div>
+                                <div class="inside_perc_skill datatable_color aws_color">60%</div>
                             </div>
                         </div>
                       </div>
@@ -601,7 +603,7 @@
                         <div class="skill_div">
                            <p><strong>Clean & Disciplined coding techniques</strong></p>
                             <div class="inside_skill">
-                                <div class="inside_perc_skill datatable_color aws_color">90%</div>
+                                <div class="inside_perc_skill datatable_color clean_desc_color">90%</div>
                             </div>
                         </div>
                       </div>
